@@ -1,0 +1,66 @@
+{
+  "name": "@jayson991/create-app",
+  "version": "1.0.0",
+  "description": "A CLI Tool To Create Apps You Want Like create-react-app | @vue/cli | @angular/cli",
+  "author": "Jayson Wu <jaysonwu991@outlook.com>",
+  "main": "lib/index.js",
+  "license": "ISC",
+  "scripts": {
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
+    "build": "rollup -c && cp src/templates.json lib/",
+    "format": "prettier --write --parser=typescript src/**/*.ts"
+  },
+  "bin": {
+    "create-app": "lib/index.js"
+  },
+  "keywords": [
+    "node",
+    "babel",
+    "eslint",
+    "create-app",
+    "rollup",
+    "prettier",
+    "template",
+    "front-end",
+    "create-app",
+    "typescript"
+  ],
+  "files": [
+    "lib",
+    "README.md",
+    "package.json"
+  ],
+  "bugs": {
+    "url": "https://github.com/jaysonwu991/create-app/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaysonwu991/create-app.git"
+  },
+  "homepage": "https://github.com/jaysonwu991/create-app",
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.6",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-typescript": "^8.2.5",
+    "@types/inquirer": "^8.1.2",
+    "@types/node": "^16.10.1",
+    "@typescript-eslint/eslint-plugin": "^4.31.2",
+    "@typescript-eslint/parser": "^4.31.2",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.4.1",
+    "rollup": "^2.57.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "typescript": "^4.4.3"
+  },
+  "dependencies": {
+    "cfonts": "^2.10.0",
+    "commander": "^8.2.0",
+    "download-git-repo": "^3.0.2",
+    "inquirer": "^8.1.5",
+    "ora": "^6.0.1"
+  }
+}
