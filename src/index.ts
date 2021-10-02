@@ -1,8 +1,9 @@
+#!/usr/bin/env node
 const fs = require('fs');
 const ora = require('ora');
 const CFonts = require('cfonts');
-const program = require('commander');
 const inquirer = require('inquirer');
+const { program } = require('commander');
 const download = require('download-git-repo');
 
 const packageInfo = require('../package.json');

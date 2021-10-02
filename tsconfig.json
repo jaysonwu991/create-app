@@ -1,16 +1,20 @@
 {
   "compilerOptions": {
+    "lib": [
+      "esnext"
+    ],
     "strict": true,
-    "target": "ES6",
-    "outDir": "./lib",
-    "module": "ESNext",
+    "outDir": "bin",
+    "target": "es6",
+    "sourceMap": false,
     "declaration": true,
     "skipLibCheck": true,
-    "resolveJsonModule": true,
-    "moduleResolution": "node",
-    "forceConsistentCasingInFileNames": true
+    "module": "commonjs",
   },
   "include": [
-    "./src/"
+    "src/index.ts"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }
