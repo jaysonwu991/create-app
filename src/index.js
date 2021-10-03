@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 const fs = require('fs');
-const ora = require('ora');
 const CFonts = require('cfonts');
 const inquirer = require('inquirer');
 const { program } = require('commander');
@@ -27,9 +26,9 @@ program
   .command('list')
   .description('List All Templates')
   .action(() => {
-    const allTemplates: { templateName: string; description: string }[] = [];
-    templates.forEach((template: { name: string; description: string }) => {
-      const templateItem: { templateName: string; description: string } = {
+    const allTemplates = [];
+    templates.forEach((template = {}) => {
+      const templateItem = {
         templateName: template.name,
         description: template.description,
       };
@@ -58,7 +57,7 @@ program
         { type: 'list', name: 'platform', message: 'Template From: ', choices: templatePlatforms },
         { type: 'list', name: 'branch', message: 'From Branch: ', choices: branchNames },
       ])
-      .then((answers: { name: string; description: string; author: string; branch: string }) => {
+      .then((answers = {}) => {
         if (!answers.name.trim() || !answers.author.trim()) {
           console.log('Add Local Template To CLI Failed: ');
           process.exit(0);
@@ -70,7 +69,7 @@ program
           downloadUrl: `https://github.com:${answers.author}/${answers.name}#${answers.branch}`,
         };
         templates.push(template);
-        fs.writeFile('templates.json', JSON.stringify(templates, null, 2), (err: Error) => {
+        fs.writeFile('templates.json', JSON.stringify(templates, null, 2), (err) => {
           if (err) {
             console.log('Add Local Template To CLI Failed: ', err);
             process.exit(0);
@@ -78,7 +77,7 @@ program
           console.log('Add Local Template To CLI Successful');
         });
       })
-      .catch((err: Error) => {
+      .catch((err) => {
         console.log('Add Local Template To CLI Failed: ', err);
         process.exit(0);
       });
@@ -89,12 +88,10 @@ program
   .description('Initialize Project Through Template')
   .action(() => {
     const projectName = 'original-project';
-    const templateNames: string[] = [];
-    templates.forEach(
-      (template: { name: string; description: string; url: string; downloadUrl: string }) => {
-        templateNames.push(template.name);
-      }
-    );
+    const templateNames = [];
+    templates.forEach((template = {}) => {
+      templateNames.push(template.name);
+    });
     inquirer
       .prompt([
         { type: 'input', name: 'name', message: 'Project Name: ', default: projectName },
@@ -112,45 +109,40 @@ program
           default: 'Jayson Wu <jaysonwu991@outlook.com>',
         },
       ])
-      .then((answers: { name: string; template?: string; description: string; author: string }) => {
-        const templateName: string | undefined = answers.template;
+      .then((answers = {}) => {
+        const templateName = answers.template;
         delete answers.template;
 
-        console.log('');
-        const spinner = ora('Template Downloading').start();
+        console.log('Template Downloading');
 
         const { downloadUrl } =
-          templates.find(
-            (template: { name: string; description: string; url: string; downloadUrl: string }) =>
-              templateName === template.name
-          ) || {};
-        download(downloadUrl, answers.name || projectName, { clone: true }, (err: Error) => {
+          templates.find((template = {}) => templateName === template.name) || {};
+        download(downloadUrl, answers.name || projectName, { clone: true }, (err) => {
           if (err) {
-            spinner.fail('Template Downloading Failed');
-            spinner.clear();
+            console.error('Template Downloading Failed');
             process.exit(0);
           }
 
-          spinner.succeed('Template Downloading Successful');
-          spinner.clear();
+          console.log('Template Downloading Successful');
 
           const packagePath = `${answers.name || projectName}/package.json`;
           const packageContent = fs.readFileSync(packagePath, 'utf8');
-          fs.writeFileSync(
-            packagePath,
-            JSON.stringify({ ...JSON.parse(packageContent), ...answers }, null, 2),
-            (err: Error) => {
-              if (err) {
-                console.log('Rewrite Package.json Failed: ', err);
-                process.exit(0);
-              }
-              console.log('\n', 'Rewrite Package.json Successful');
-            }
+          const newPackageContent = JSON.stringify(
+            { ...JSON.parse(packageContent), ...answers },
+            null,
+            2
           );
+          fs.writeFileSync(packagePath, newPackageContent, (err) => {
+            if (err) {
+              console.log('Rewrite Package.json Failed: ', err);
+              process.exit(0);
+            }
+            console.log('\n', 'Rewrite Package.json Successful');
+          });
           console.log('\n', 'Initialize Your Project Successful');
         });
       })
-      .catch((err: Error) => {
+      .catch((err) => {
         console.log('Initialize Your Project Failed: ', err);
         process.exit(0);
       });

@@ -5,19 +5,14 @@ module.exports = {
     node: true,
     commonjs: true,
   },
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    ecmaVersion: 2018,
-    sourceType: 'module',
-  },
+  parser: '@babel/eslint-parser',
+  plugins: ['babel', 'import', 'prettier'],
   extends: ['eslint:recommended', 'prettier/prettier'],
-  plugins: ['@typescript-eslint', 'prettier'],
   rules: {
     semi: [2, 'always'],
     quotes: [2, 'single'],
     'object-curly-spacing': [2, 'always'],
     'array-bracket-spacing': [2, 'never'],
-    '@typescript-eslint/no-var-requires': 0,
     'comma-spacing': [2, { before: false, after: true }],
     'comma-dangle': [
       2,
