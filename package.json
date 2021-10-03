@@ -1,6 +1,6 @@
 {
   "name": "@jayson991/create-app",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A CLI Tool To Create Apps You Want Like create-react-app | @vue/cli | @angular/cli",
   "license": "MIT",
   "main": "src/index.js",

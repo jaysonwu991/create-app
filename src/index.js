@@ -13,7 +13,7 @@ program
   .command('info')
   .description('Output Project Information')
   .action(() => {
-    CFonts.say('GENTPL-CLI', { font: 'shade', align: 'left', colors: ['#f80', '#840'] });
+    CFonts.say('CREATE-APP', { font: 'shade', align: 'left', colors: ['#f80', '#840'] });
     console.log('Verison:', packageInfo.version);
     console.log(
       'Description: The Project Can Provide All Kinds Of Front-end Templates For You, Just Have A Nice Try!'
