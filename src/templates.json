@@ -24,6 +24,12 @@
     "downloadUrl": "https://github.com:jaysonwu991/vue2-library-template#main"
   },
   {
+    "name": "vue3-boilplate",
+    "description": "A Vue 3.x Boilplate Project Using Webpack",
+    "url": "https://github.com/jaysonwu991/vue3-boilplate",
+    "downloadUrl": "https://github.com:jaysonwu991/vue3-boilplate#main"
+  },
+  {
     "name": "wechat-app-template",
     "description": "A Wechat App Template Built By Gulp",
     "url": "https://github.com/jaysonwu991/wechat-app-template",
