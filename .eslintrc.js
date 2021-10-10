@@ -6,7 +6,7 @@ module.exports = {
     commonjs: true,
   },
   parser: '@babel/eslint-parser',
-  plugins: ['babel', 'import', 'prettier'],
+  plugins: ['babel', 'prettier'],
   extends: ['eslint:recommended', 'prettier/prettier'],
   rules: {
     semi: [2, 'always'],

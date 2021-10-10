@@ -40,5 +40,4 @@ $ create-app list
 | react-typescript-template |        Typescript         |
 |       vue2-template       |   Vue 2.x (Webpack 5.x)   |
 |   vue2-library-template   |   Vue 2.x, npm Library    |
-|      vue3-boilerplate       |   Vue 3.x (Webpack 5.x)   |
-|    wechat-app-template    |       Wechat Applet       |
+|     vue3-boilerplate      |   Vue 3.x (Webpack 5.x)   |
