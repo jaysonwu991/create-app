@@ -1,6 +1,6 @@
 {
   "name": "@jayson991/create-app",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A CLI Tool To Create Apps You Want Like create-react-app | @vue/cli | @angular/cli",
   "license": "MIT",
   "main": "src/index.js",
@@ -18,13 +18,12 @@
     "access": "public"
   },
   "keywords": [
-    "node",
-    "babel",
-    "eslint",
-    "prettier",
+    "vue",
+    "react",
+    "library",
     "template",
-    "front-end",
-    "create-app"
+    "create-app",
+    "boilerplate"
   ],
   "files": [
     "src",
@@ -40,11 +39,11 @@
   },
   "homepage": "https://github.com/jaysonwu991/create-app",
   "devDependencies": {
-    "@babel/core": "^7.15.8",
-    "@babel/eslint-parser": "^7.15.8",
+    "@babel/core": "^7.16.0",
+    "@babel/eslint-parser": "^7.16.3",
     "@babel/eslint-plugin": "^7.14.5",
-    "@babel/preset-env": "^7.15.8",
-    "eslint": "^8.0.0",
+    "@babel/preset-env": "^7.16.4",
+    "eslint": "^8.2.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-babel": "^5.3.1",
     "eslint-plugin-prettier": "^4.0.0",
@@ -53,7 +52,7 @@
   },
   "dependencies": {
     "cfonts": "^2.10.0",
-    "commander": "^8.2.0",
+    "commander": "^8.3.0",
     "download-git-repo": "^3.0.2",
     "inquirer": "^8.2.0"
   }
