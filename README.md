@@ -41,3 +41,4 @@ $ create-app list
 |       vue2-template       |   Vue 2.x (Webpack 5.x)   |
 |   vue2-library-template   |   Vue 2.x, npm Library    |
 |     vue3-boilerplate      |   Vue 3.x (Webpack 5.x)   |
+| vue3-library-boilerplate  |   Vue 3.x, npm Library    |

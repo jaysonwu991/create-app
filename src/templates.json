@@ -19,7 +19,7 @@
   },
   {
     "name": "vue2-library-template",
-    "description": "A Vue 2.x Library Template",
+    "description": "A Vue 2.x Library Template Project Using Webpack",
     "url": "https://github.com/jaysonwu991/vue2-library-template",
     "downloadUrl": "https://github.com:jaysonwu991/vue2-library-template#main"
   },
@@ -28,5 +28,11 @@
     "description": "A Vue 3.x Boilerplate Project Using Webpack",
     "url": "https://github.com/jaysonwu991/vue3-boilerplate",
     "downloadUrl": "https://github.com:jaysonwu991/vue3-boilerplate#main"
+  },
+  {
+    "name": "vue3-library-boilerplate",
+    "description": "A Vue 3.x Library Boilerplate Project Using Webpack",
+    "url": "https://github.com/jaysonwu991/vue3-library-boilerplate",
+    "downloadUrl": "https://github.com:jaysonwu991/vue3-library-boilerplate#main"
   }
 ]
