@@ -34,11 +34,11 @@ $ create-app list
 
 ## All Templates
 
-|       Template Name       | Main Language (Framework) |
-| :-----------------------: | :-----------------------: |
-|      react-template       |        Javascript         |
-| react-typescript-template |        Typescript         |
-|       vue2-template       |   Vue 2.x (Webpack 5.x)   |
-|   vue2-library-template   |   Vue 2.x, npm Library    |
-|     vue3-boilerplate      |   Vue 3.x (Webpack 5.x)   |
-| vue3-library-boilerplate  |   Vue 3.x, npm Library    |
+|                                     Template Name                                     | Main Language (Framework) |
+| :-----------------------------------------------------------------------------------: | :-----------------------: |
+|            [react-template](https://github.com/jaysonwu991/react-template)            |        Javascript         |
+| [react-typescript-template](https://github.com/jaysonwu991/react-typescript-template) |        Typescript         |
+|             [vue2-template](https://github.com/jaysonwu991/vue2-template)             |   Vue 2.x (Webpack 5.x)   |
+|     [vue2-library-template](https://github.com/jaysonwu991/vue2-library-template)     |   Vue 2.x, npm Library    |
+|          [vue3-boilerplate](https://github.com/jaysonwu991/vue3-boilerplate)          |   Vue 3.x (Webpack 5.x)   |
+|  [vue3-library-boilerplate](https://github.com/jaysonwu991/vue3-library-boilerplate)  |   Vue 3.x, npm Library    |
