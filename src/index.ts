@@ -1,11 +1,13 @@
 #!/usr/bin/env node
-const fs = require('fs');
-const CFonts = require('cfonts');
-const inquirer = require('inquirer');
-const { program } = require('commander');
-const download = require('download-git-repo');
 
-const packageInfo = require('../package.json');
+import fs from 'node:fs';
+import CFonts from 'cfonts';
+import inquirer from 'inquirer';
+import { program } from 'commander';
+import download from 'download-git-repo';
+
+import packageInfo from '../package.json';
+import templates from './templates.json';
 
 program.version(packageInfo.version, '-v, --version', 'Output The Current Version');
 
@@ -21,13 +23,12 @@ program
     process.exit(0);
   });
 
-const templates = require('./templates.json');
 program
   .command('list')
   .description('List All Templates')
   .action(() => {
-    const allTemplates = [];
-    templates.forEach((template = {}) => {
+    const allTemplates: { [key: string]: string }[] = [];
+    templates.forEach((template: { name: string; description: string }) => {
       const templateItem = {
         templateName: template.name,
         description: template.description,
@@ -88,8 +89,8 @@ program
   .description('Initialize Project Through Template')
   .action(() => {
     const projectName = 'original-project';
-    const templateNames = [];
-    templates.forEach((template = {}) => {
+    const templateNames: Array<string> = [];
+    templates.forEach((template: { name: string }) => {
       templateNames.push(template.name);
     });
     inquirer
@@ -116,8 +117,8 @@ program
         console.log('Template Downloading');
 
         const { downloadUrl } =
-          templates.find((template = {}) => templateName === template.name) || {};
-        download(downloadUrl, answers.name || projectName, { clone: true }, (err) => {
+          templates.find((template: { name: string }) => templateName === template.name) || {};
+        download(downloadUrl, answers.name || projectName, { clone: true }, (err: Error) => {
           if (err) {
             console.error('Template Downloading Failed');
             process.exit(0);
@@ -132,13 +133,9 @@ program
             null,
             2
           );
-          fs.writeFileSync(packagePath, newPackageContent, (err) => {
-            if (err) {
-              console.log('Rewrite Package.json Failed: ', err);
-              process.exit(0);
-            }
-            console.log('\n', 'Rewrite Package.json Successful');
-          });
+
+          fs.writeFileSync(packagePath, newPackageContent);
+
           console.log('\n', 'Initialize Your Project Successful');
         });
       })

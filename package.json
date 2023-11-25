@@ -1,18 +1,19 @@
 {
   "name": "@jayson991/create-app",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "A CLI Tool To Create Apps You Want Like create-react-app | @vue/cli | @angular/cli",
   "license": "MIT",
   "main": "src/index.js",
   "author": "Jayson Wu <jaysonwu991@outlook.com>",
   "scripts": {
-    "lint": "eslint src --ext .js",
-    "lint:fix": "eslint src --ext .js --fix",
-    "prettify": "prettier --write src/**/*.js"
+    "build": "node build.js",
+    "lint": "eslint src --ext .js,.ts",
+    "lint:fix": "eslint src --ext .js,.ts --fix",
+    "prettify": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\""
   },
   "bin": {
-    "create-app": "src/index.js",
-    "@jayson991/create-app": "src/index.js"
+    "create-app": "lib/index.js",
+    "@jayson991/create-app": "lib/index.js"
   },
   "publishConfig": {
     "access": "public"
@@ -20,13 +21,10 @@
   "keywords": [
     "vue",
     "react",
-    "library",
-    "template",
-    "create-app",
-    "boilerplate"
+    "create-app"
   ],
   "files": [
-    "src",
+    "lib",
     "README.md",
     "package.json"
   ],
@@ -39,21 +37,22 @@
   },
   "homepage": "https://github.com/jaysonwu991/create-app",
   "devDependencies": {
-    "@babel/core": "^7.17.10",
-    "@babel/eslint-parser": "^7.17.0",
-    "@babel/eslint-plugin": "^7.17.7",
-    "@babel/preset-env": "^7.17.10",
-    "eslint": "^8.15.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-babel": "^5.3.1",
-    "eslint-plugin-prettier": "^4.0.0",
-    "prettier": "^2.6.2",
-    "rimraf": "^3.0.2"
+    "@types/inquirer": "^9.0.7",
+    "@typescript-eslint/eslint-plugin": "^6.12.0",
+    "@typescript-eslint/parser": "^6.12.0",
+    "esbuild": "^0.19.7",
+    "esbuild-node-externals": "^1.11.0",
+    "eslint": "^8.54.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "prettier": "^3.1.0",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.3.2"
   },
   "dependencies": {
     "cfonts": "^2.10.1",
-    "commander": "^9.2.0",
+    "commander": "^9.5.0",
     "download-git-repo": "^3.0.2",
-    "inquirer": "^8.2.4"
+    "inquirer": "^8.2.6"
   }
 }
